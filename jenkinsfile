@@ -1,0 +1,31 @@
+pipeline{
+    agent any
+
+    tools {
+        maven 'Maven'
+    }
+
+    stages{
+        stage(checkin git){
+            steps{
+               git url:'https://github.com/Varshar21-07/devopsEvaluation.git' branch:'main'
+            }
+        }
+        stage(dependencies install){
+            steps{
+                bat 'npm install'
+            }
+        }
+
+        stage(build){
+           steps{
+            bat 'npm run build'
+           }
+        }
+        stage(tests){
+            steps{
+                bat 'npm test || echo "no test defined"'
+            }
+        }
+    }
+}
