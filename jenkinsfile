@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     tools {
-        NodeJS 'node.js'
+        nodejs 'node.js'
     }
 
     stages{
@@ -28,6 +28,9 @@ pipeline{
                 bat 'npm test || echo "no test defined"'
             }
         }
-            
+        
+        
+        
+        
     }
 }
