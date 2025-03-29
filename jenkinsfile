@@ -17,16 +17,18 @@ pipeline{
             }
         }
 
+          stage(build){
+           steps{
+            bat 'npm run'
+           }
+        }
+
         stage(tests){
             steps{
                 bat 'npm test || echo "no test defined"'
             }
         }
-        stage(build){
-           steps{
-            bat 'npm run build'
-           }
-        }
+        
         
     }
 }
