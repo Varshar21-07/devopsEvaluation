@@ -6,7 +6,7 @@ pipeline{
     }
 
     stages{
-        stage(checkin git){
+        stage(checkin){
             steps{
                git url:'https://github.com/Varshar21-07/devopsEvaluation.git' branch:'main'
             }
